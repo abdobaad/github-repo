@@ -1,0 +1,42 @@
+.repo_card--container {
+  display: flex;
+  height: 11rem;
+  padding: 1rem;
+  .creator_image {
+    height: 100%;
+    width: 10rem;
+    margin-right: 2rem;
+  }
+  .card_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .description {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .repo--data {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 1rem;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
+      .issues {
+        border: 1px dashed #ff0000;
+        color: #ff0000;
+      }
+      .stars {
+        color: #fff;
+        background-color: #a58502;
+      }
+    }
+  }
+}

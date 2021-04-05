@@ -1,6 +1,24 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import RepoCard from "../Components/RepoCard"
+
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
-  return <div className={styles.container}>great</div>;
+  const [reposArr,setReposArr] = useState([]);
+  useEffect(()=>{
+    const fetch = async () => {
+      const url = `https://api.github.com/search/repositories?q=created:>2021-03-05&sort=stars&order=desc`
+      const repos = await axios.get(url);
+
+      console.log(repos);
+      setReposArr(repos.data.items)
+    }
+
+    fetch()
+  },[])
+  return <div className="app">
+     {reposArr.length > 0 && reposArr.map(repo => <RepoCard key={repo.id} repo={repo} />)}
+  </div>;
 }
