@@ -1,12 +1,14 @@
 import moment from 'moment';
 import React from 'react';
+import Link from "next/link"
 
-
-const index = ({repo}) => {
-    const {owner,name,description,stargazers_count,open_issues_count,created_at} = repo;
-    console.log(description);
+const RepoCard = ({repo}) => {
+    const {owner,name,description,stargazers_count,open_issues_count,created_at,html_url} = repo;
+  console.log(repo);
     return (
-        <div className="repo_card--container"> 
+        <Link href={`${html_url}`} >
+            <a target="_blank">
+            <div className="repo_card--container"> 
             <img className="creator_image" src={owner.avatar_url} alt={owner.login} />
             <div className="card_info">
               <h2>{name && name.length > 40 ? `${name.slice(0,50)}...` : name }</h2>
@@ -18,7 +20,9 @@ const index = ({repo}) => {
               </div>
             </div>
         </div>
+        </a>
+        </Link>
     );
 };
 
-export default index;
+export default RepoCard;
