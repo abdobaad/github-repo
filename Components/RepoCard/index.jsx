@@ -4,9 +4,8 @@ import Link from "next/link"
 
 const RepoCard = ({repo}) => {
     const {owner,name,description,stargazers_count,open_issues_count,created_at,html_url} = repo;
-  console.log(repo);
     return (
-        <Link href={`${html_url}`} >
+        <Link  href={`${html_url}`} >
             <a target="_blank">
             <div className="repo_card--container"> 
             <img className="creator_image" src={owner.avatar_url} alt={owner.login} />
