@@ -22,4 +22,4 @@ https://github-repos-stars.netlify.app/
 
 clone the repo /
 yarn install /
-npm run dev /
+yarn run dev /
