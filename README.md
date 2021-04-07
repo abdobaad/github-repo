@@ -20,6 +20,6 @@ https://github-repos-stars.netlify.app/
 
 //local:
 
-clone the repo
-yarn install
-npm run dev
+clone the repo /
+yarn install /
+npm run dev /
